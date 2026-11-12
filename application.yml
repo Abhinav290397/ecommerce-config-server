@@ -1,15 +1,18 @@
 #eureka config
-eureka.client.service-url.default-zone: http://localhost:8761/eureka
+eureka.client.service-url.default-zone: http://discovery-service:8761/eureka
 
 
 #actuator config
 management:
    endpoints:
-       web:
+      web:
          exposure:
-             incluse: "*"
-
-
-#zipkin config
-management.tracing.sampling.probability: 1.0
-spring.zipkin.baseurl: http://localhost:9411
+            incluse: "*"
+   tracing:
+      sampling:
+         probability: 1.0
+    zipkin:
+      tracing:
+          endpoint: http://zipkin:9411/api/v2/spans
+          
+        
