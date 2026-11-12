@@ -1,1 +1,15 @@
+#eureka config
+eureka.client.service-url.default-zone: http://localhost:8761/eureka
 
+
+#actuator config
+management:
+   endpoints:
+       web:
+         exposure:
+             incluse: "*"
+
+
+#zipkin config
+management.tracing.sampling.probability: 1.0
+spring.zipkin.baseurl: http://localhost:9411
